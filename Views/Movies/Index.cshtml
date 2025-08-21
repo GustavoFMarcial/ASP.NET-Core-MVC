@@ -14,6 +14,7 @@
             <th>@Html.DisplayNameFor(model => model.ReleaseDate)</th>
             <th>@Html.DisplayNameFor(model => model.Genre)</th>
             <th>@Html.DisplayNameFor(model => model.Price)</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -24,6 +25,11 @@
             <td>@Html.DisplayFor(item => movie.ReleaseDate)</td>
             <td>@Html.DisplayFor(item => movie.Genre)</td>
             <td>@Html.DisplayFor(item => movie.Price)</td>
+            <td class="text-end">
+                <a asp-action="Details" asp-route-id="@movie.Id" class="btn btn-primar">Details</a>
+                <a asp-action="Edit" asp-route-id="@movie.Id" class="btn btn-primary">Edit</a>
+                <a asp-action="Delete" asp-route-id="@movie.Id" class="btn btn-primary">Delete</a>
+            </td>
         </tr>
     }
     <tbody>
