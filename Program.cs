@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using MVCMovie.Data;
+using MVCMovie.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,7 @@ builder.Services.AddDbContext<MovieContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("MovieContext"));
 });
+builder.Services.AddScoped<IMoviesService, MoviesService>();
 
 var app = builder.Build();
 

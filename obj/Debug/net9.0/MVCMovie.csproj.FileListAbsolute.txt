@@ -723,3 +723,4 @@ C:\Users\gustavo.marcial\projetos\ASP.NET-Core-MVC\obj\Debug\net9.0\refint\MVCMo
 C:\Users\gustavo.marcial\projetos\ASP.NET-Core-MVC\obj\Debug\net9.0\MVCMovie.pdb
 C:\Users\gustavo.marcial\projetos\ASP.NET-Core-MVC\obj\Debug\net9.0\MVCMovie.genruntimeconfig.cache
 C:\Users\gustavo.marcial\projetos\ASP.NET-Core-MVC\obj\Debug\net9.0\ref\MVCMovie.dll
+C:\Users\Gustavo F. Marcial\Desktop\coisas\Dev. Course\C#\projects\ASP.NET Core\MVCMovie\obj\Debug\net9.0\MVCMovie.sourcelink.json

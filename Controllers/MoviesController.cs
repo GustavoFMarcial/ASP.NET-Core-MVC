@@ -1,25 +1,30 @@
+using System.Configuration;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MVCMovie.Data;
 using MVCMovie.Models;
+using MVCMovie.Services;
+using SQLitePCL;
 
 namespace MVCMovie.Controllers
 {
     public class MoviesController : Controller
     {
-        private readonly MovieContext _context;
+        // private readonly MovieContext _context;
         private readonly ILogger<MoviesController> _logger;
+        private readonly IMoviesService _movieService;
 
-        public MoviesController(MovieContext context, ILogger<MoviesController> logger)
+        public MoviesController(IMoviesService movieService, ILogger<MoviesController> logger)
         {
-            _context = context;
+            _movieService = movieService;
             _logger = logger;
         }
 
         public async Task<IActionResult> Index()
         {
             _logger.LogInformation("Usuário acessando pagina index");
-            return View(await _context.Movie.ToListAsync());
+            return View(await _movieService.GetListMoviesAsync());
+            // return View(await _context.Movie.ToListAsync());
         }
 
         public IActionResult Create()
@@ -35,8 +40,10 @@ namespace MVCMovie.Controllers
                 return View(movie);
             }
 
-            _context.Movie.Add(movie);
-            await _context.SaveChangesAsync();
+            _movieService.AddMovie(movie);
+            // _context.Movie.Add(movie);
+            await _movieService.SaveChangesMoviesAsync();
+            // await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(Index));
         }
@@ -48,7 +55,8 @@ namespace MVCMovie.Controllers
                 return NotFound();
             }
 
-            Movie? movie = await _context.Movie.FindAsync(id);
+            Movie? movie = await _movieService.FindMovieAsync(id);
+            // Movie? movie = await _context.Movie.FindAsync(id);
 
             if (movie == null)
             {
@@ -65,7 +73,8 @@ namespace MVCMovie.Controllers
                 return NotFound();
             }
 
-            Movie? movie = await _context.Movie.FindAsync(id);
+            Movie? movie = await _movieService.FindMovieAsync(id);
+            // Movie? movie = await _context.Movie.FindAsync(id);
 
             if (movie == null)
             {
@@ -76,24 +85,34 @@ namespace MVCMovie.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit([Bind("Id,Title,ReleaseDate,Genre,Price")] Movie movie)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,ReleaseDate,Genre,Price")] Movie movie)
         {
             _logger.LogInformation("Usuário editando filme");
-            if (!ModelState.IsValid)
+
+            if (id != movie.Id)
             {
-                return NotFound();
+                return BadRequest();
             }
 
-            _context.Update(movie);
+            if (!ModelState.IsValid)
+            {
+                return View(movie);
+            }
+
+            _movieService.UpdateMovie(movie);
+            // _context.Update(movie);
 
             try
             {
-                await _context.SaveChangesAsync();
+                await _movieService.SaveChangesMoviesAsync();
+                // await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
-                if (!MovieExist(movie.Id))
+                bool isValid = await MovieExist(id);
+
+                if (!isValid)
                 {
                     return RedirectToAction(nameof(Index));
                 }
@@ -111,7 +130,8 @@ namespace MVCMovie.Controllers
                 return NotFound();
             }
 
-            Movie? movie = await _context.Movie.FindAsync(id);
+            Movie? movie = await _movieService.FindMovieAsync(id);
+            // Movie? movie = await _context.Movie.FindAsync(id);
 
             if (movie == null)
             {
@@ -124,35 +144,30 @@ namespace MVCMovie.Controllers
         [HttpPost]
         public async Task<IActionResult> ConfirmDelete(int? id)
         {
-            if (!ModelState.IsValid)
+            if (id == null)
             {
                 return NotFound();
             }
 
-            Movie? movie = await _context.Movie.FindAsync(id);
-            _context.Movie.Remove(movie);
+            Movie? movie = await _movieService.FindMovieAsync(id);
+            // Movie? movie = await _context.Movie.FindAsync(id);
 
-            await _context.SaveChangesAsync();
+            if (movie  == null)
+            {
+                return NotFound();
+            }
+            
+            _movieService.RemoveMovie(movie);
+            // _context.Movie.Remove(movie);
+
+            await _movieService.SaveChangesMoviesAsync();
+            // await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool MovieExist(int id)
+        private async Task<bool> MovieExist(int? id)
         {
-            Movie? movie = _context.Movie.Find(id);
-
-            if (movie == null)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            return await _movieService.AnyMovieAsync(id);
         }
-
-        // public async Task<IActionResult> Delete(int? id)
-        // {
-
-        // }
     }
 }
