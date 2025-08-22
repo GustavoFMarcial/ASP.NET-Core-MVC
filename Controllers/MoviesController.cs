@@ -1,16 +1,11 @@
-using System.Configuration;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using MVCMovie.Data;
 using MVCMovie.Models;
 using MVCMovie.Services;
-using SQLitePCL;
 
 namespace MVCMovie.Controllers
 {
     public class MoviesController : Controller
     {
-        // private readonly MovieContext _context;
         private readonly ILogger<MoviesController> _logger;
         private readonly IMoviesService _movieService;
 
@@ -24,7 +19,6 @@ namespace MVCMovie.Controllers
         {
             _logger.LogInformation("Usuário acessando pagina index");
             return View(await _movieService.GetListMoviesAsync());
-            // return View(await _context.Movie.ToListAsync());
         }
 
         public IActionResult Create()
@@ -41,9 +35,7 @@ namespace MVCMovie.Controllers
             }
 
             _movieService.AddMovie(movie);
-            // _context.Movie.Add(movie);
             await _movieService.SaveChangesMoviesAsync();
-            // await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(Index));
         }
@@ -56,7 +48,6 @@ namespace MVCMovie.Controllers
             }
 
             Movie? movie = await _movieService.FindMovieAsync(id);
-            // Movie? movie = await _context.Movie.FindAsync(id);
 
             if (movie == null)
             {
@@ -74,7 +65,6 @@ namespace MVCMovie.Controllers
             }
 
             Movie? movie = await _movieService.FindMovieAsync(id);
-            // Movie? movie = await _context.Movie.FindAsync(id);
 
             if (movie == null)
             {
@@ -100,12 +90,10 @@ namespace MVCMovie.Controllers
             }
 
             _movieService.UpdateMovie(movie);
-            // _context.Update(movie);
 
             try
             {
                 await _movieService.SaveChangesMoviesAsync();
-                // await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -131,7 +119,6 @@ namespace MVCMovie.Controllers
             }
 
             Movie? movie = await _movieService.FindMovieAsync(id);
-            // Movie? movie = await _context.Movie.FindAsync(id);
 
             if (movie == null)
             {
@@ -150,7 +137,6 @@ namespace MVCMovie.Controllers
             }
 
             Movie? movie = await _movieService.FindMovieAsync(id);
-            // Movie? movie = await _context.Movie.FindAsync(id);
 
             if (movie  == null)
             {
@@ -158,10 +144,8 @@ namespace MVCMovie.Controllers
             }
             
             _movieService.RemoveMovie(movie);
-            // _context.Movie.Remove(movie);
 
             await _movieService.SaveChangesMoviesAsync();
-            // await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 

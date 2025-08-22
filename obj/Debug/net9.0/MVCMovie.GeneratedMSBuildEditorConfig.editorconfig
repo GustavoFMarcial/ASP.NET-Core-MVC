@@ -17,53 +17,53 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MVCMovie
 build_property.RootNamespace = MVCMovie
-build_property.ProjectDir = C:\Users\Gustavo F. Marcial\Desktop\coisas\Dev. Course\C#\projects\ASP.NET Core\MVCMovie\
+build_property.ProjectDir = C:\Users\gustavo.marcial\projetos\ASP.NET-Core-MVC\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Gustavo F. Marcial\Desktop\coisas\Dev. Course\C#\projects\ASP.NET Core\MVCMovie
+build_property.MSBuildProjectDirectory = C:\Users\gustavo.marcial\projetos\ASP.NET-Core-MVC
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Gustavo F. Marcial/Desktop/coisas/Dev. Course/C\#/projects/ASP.NET Core/MVCMovie/Views/Movies/Create.cshtml]
+[C:/Users/gustavo.marcial/projetos/ASP.NET-Core-MVC/Views/Movies/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Gustavo F. Marcial/Desktop/coisas/Dev. Course/C\#/projects/ASP.NET Core/MVCMovie/Views/Movies/Delete.cshtml]
+[C:/Users/gustavo.marcial/projetos/ASP.NET-Core-MVC/Views/Movies/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Gustavo F. Marcial/Desktop/coisas/Dev. Course/C\#/projects/ASP.NET Core/MVCMovie/Views/Movies/Details.cshtml]
+[C:/Users/gustavo.marcial/projetos/ASP.NET-Core-MVC/Views/Movies/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Gustavo F. Marcial/Desktop/coisas/Dev. Course/C\#/projects/ASP.NET Core/MVCMovie/Views/Movies/Edit.cshtml]
+[C:/Users/gustavo.marcial/projetos/ASP.NET-Core-MVC/Views/Movies/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Gustavo F. Marcial/Desktop/coisas/Dev. Course/C\#/projects/ASP.NET Core/MVCMovie/Views/Movies/Index.cshtml]
+[C:/Users/gustavo.marcial/projetos/ASP.NET-Core-MVC/Views/Movies/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Gustavo F. Marcial/Desktop/coisas/Dev. Course/C\#/projects/ASP.NET Core/MVCMovie/Views/Shared/Error.cshtml]
+[C:/Users/gustavo.marcial/projetos/ASP.NET-Core-MVC/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Gustavo F. Marcial/Desktop/coisas/Dev. Course/C\#/projects/ASP.NET Core/MVCMovie/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/gustavo.marcial/projetos/ASP.NET-Core-MVC/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Gustavo F. Marcial/Desktop/coisas/Dev. Course/C\#/projects/ASP.NET Core/MVCMovie/Views/_ViewImports.cshtml]
+[C:/Users/gustavo.marcial/projetos/ASP.NET-Core-MVC/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Gustavo F. Marcial/Desktop/coisas/Dev. Course/C\#/projects/ASP.NET Core/MVCMovie/Views/_ViewStart.cshtml]
+[C:/Users/gustavo.marcial/projetos/ASP.NET-Core-MVC/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Gustavo F. Marcial/Desktop/coisas/Dev. Course/C\#/projects/ASP.NET Core/MVCMovie/Views/Shared/_Layout.cshtml]
+[C:/Users/gustavo.marcial/projetos/ASP.NET-Core-MVC/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-4sd2juyvsg
